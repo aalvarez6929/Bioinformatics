@@ -1,30 +1,4 @@
 import re
-
-standard_code = {
-     "UUU": "F", "UUC": "F", "UUA": "L", "UUG": "L", "UCU": "S",
-     "UCC": "S", "UCA": "S", "UCG": "S", "UAU": "Y", "UAC": "Y",
-     "UAA": "*", "UAG": "*", "UGA": "*", "UGU": "C", "UGC": "C",
-     "UGG": "W", "CUU": "L", "CUC": "L", "CUA": "L", "CUG": "L",
-     "CCU": "P", "CCC": "P", "CCA": "P", "CCG": "P", "CAU": "H",
-     "CAC": "H", "CAA": "Q", "CAG": "Q", "CGU": "R", "CGC": "R",
-     "CGA": "R", "CGG": "R", "AUU": "I", "AUC": "I", "AUA": "I",
-     "AUG": "M", "ACU": "T", "ACC": "T", "ACA": "T", "ACG": "T",
-     "AAU": "N", "AAC": "N", "AAA": "K", "AAG": "K", "AGU": "S",
-     "AGC": "S", "AGA": "R", "AGG": "R", "GUU": "V", "GUC": "V",
-     "GUA": "V", "GUG": "V", "GCU": "A", "GCC": "A", "GCA": "A",
-     "GCG": "A", "GAU": "D", "GAC": "D", "GAA": "E", "GAG": "E",
-     "GGU": "G", "GGC": "G", "GGA": "G", "GGG": "G"}
-
-kyte_doolittle={'A':1.8,'C':2.5,'D':-3.5,'E':-3.5,'F':2.8,'G':-0.4,'H':-3.2,'I':4.5,'K':-3.9,'L':3.8,
-                'M':1.9,'N':-3.5,'P':-1.6,'Q':-3.5,'R':-4.5,'S':-0.8,'T':-0.7,'V':4.2,'W':-0.9,'X':0,'Y':-1.3}
-
-## RENAME this file YourLastName_OOP_FinalProject_2023.py
-# after done, import this into a jupitor notebook - exeecutive running. 
-##Assignment: Add to the constructor and methods of a parent class and child classes
-##            which inherit the base class properties. NOTE: You are not allowed
-##            to import any specialized libraries for this project (e.g., no Biopython)
-##            The idea is for you to write these methods from scratch.
-
 ## Begin with the parent Seq class and the child DNA class we created in lecture below.
 ## 
 ### Seq Class
@@ -40,9 +14,10 @@ kyte_doolittle={'A':1.8,'C':2.5,'D':-3.5,'E':-3.5,'F':2.8,'G':-0.4,'H':-3.2,'I':
 #     -----------------------notes-----------------------------------------------------------
 #     kmers = k length of monomers --- can be DNA, RNA, protein sequences of various k lengths
 #         i = wherever the monomer starts on the seq AKA kmer_start
-#       i:i+k <------this means from i to i+k (0 to 0+3, 1 to 1+3, 2 to 2+3, ...), we need      							#			to stop some distance b/f the sequence since the monomer is k in 						#                       length. it would go over if this is not included
-#
-#     self.kmers.extend(kmers) <------ this line extends the self.kmers [list] by appending all 								#					the kmers madee in the current method (make_kmers). This 			
+#       i:i+k <------this means from i to i+k (0 to 0+3, 1 to 1+3, 2 to 2+3, ...), 
+#                we need to stop some distance b/f the sequence since the monomer is k in 
+#                       length. it would go over if this is not included
+#     self.kmers.extend(kmers) <------ this line extends the self.kmers [list] by appending all 												the kmers madee in the current method (make_kmers). This 			
 #					way self.kmers stores all the kmers generated so far.
 #     ----------------------notes end--------------------------------------------------------------                
 #  (2) Add a method called fasta that returns a fasta formatted string like this:
